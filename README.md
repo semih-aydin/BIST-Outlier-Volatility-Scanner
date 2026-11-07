@@ -98,7 +98,5 @@ The application will launch locally at `http://localhost:8501`.
 ## 👤 Author
 
 **Semih Aydın**  
-Computer Engineering Undergraduate @ Trabzon University  
-Focus: Data Systems, Big Data Pipelines & Analytics  
 * GitHub: [@semih-aydin](https://github.com/semih-aydin)
 * LinkedIn: [semihaydin61](https://linkedin.com/in/semihaydin61)
