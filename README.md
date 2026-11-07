@@ -27,13 +27,18 @@ flowchart LR
 ```
 
 ### 1. Feature Engineering
-* **Relative Volume (RVOL):**  
-  $$\text{RVOL}_t = \frac{\text{Volume}_t}{\text{SMA}_{20}(\text{Volume})}$$  
-  Measures institutional positioning relative to the trailing 20-day baseline.
-* **Intraday Volatility:**  
-  $$\text{Volatility}_t = \frac{\text{High}_t - \text{Low}_t}{\text{Close}_t}$$
-* **Daily Percentage Return:**  
-  $$\text{Return}_t = \frac{\text{Close}_t - \text{Close}_{t-1}}{\text{Close}_{t-1}} \times 100$$
+
+* **Relative Volume (RVOL):** Measures institutional positioning relative to the trailing 20-day baseline.
+
+$$ \text{RVOL}_t = \frac{\text{Volume}_t}{\text{SMA}_{20}(\text{Volume})} $$
+
+* **Intraday Volatility:** Quantifies the intraday high-to-low range normalized by the close.
+
+$$ \text{Volatility}_t = \frac{\text{High}_t - \text{Low}_t}{\text{Close}_t} $$
+
+* **Daily Percentage Return:** Day-over-day close-to-close percentage change.
+
+$$ \text{Return}_t = \left(\frac{\text{Close}_t - \text{Close}_{t-1}}{\text{Close}_{t-1}}\right) \times 100 $$
 
 ### 2. Dual-Engine Anomaly Detection
 1. **Classical Statistical Model (Z-Score):**
