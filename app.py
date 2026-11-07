@@ -85,9 +85,8 @@ def build_figure(df: pd.DataFrame, ticker: str, mode: str) -> go.Figure:
     fig = make_subplots(
         rows=2, cols=1,
         shared_xaxes=True,
-        vertical_spacing=0.04,
-        row_heights=[0.72, 0.28],
-        subplot_titles=(f"{ticker} Fiyat ve Anomali Noktalari", "Hacim ve 20 Gunluk Ortalama")
+        vertical_spacing=0.06,
+        row_heights=[0.72, 0.28]
     )
 
     fig.add_trace(
@@ -161,12 +160,27 @@ def build_figure(df: pd.DataFrame, ticker: str, mode: str) -> go.Figure:
     )
 
     fig.update_layout(
+        title=dict(
+            text=f"<b>{ticker}</b> Fiyat ve Anomali Noktaları",
+            x=0.01,
+            y=0.98,
+            font=dict(size=15, color="#E0E0E0")
+        ),
         height=640,
         xaxis_rangeslider_visible=False,
         template="plotly_dark",
-        margin=dict(l=30, r=30, t=35, b=25),
-        legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1)
+        margin=dict(l=30, r=30, t=60, b=25),
+        legend=dict(
+            orientation="h",
+            yanchor="bottom",
+            y=1.02,
+            xanchor="right",
+            x=1,
+            font=dict(size=12)
+        )
     )
+    fig.update_yaxes(title_text="Fiyat (TL)", row=1, col=1)
+    fig.update_yaxes(title_text="Hacim", row=2, col=1)
     return fig
 
 def scan_bist30(z_thr: float, cont: float, rvol_thr: float) -> pd.DataFrame:
