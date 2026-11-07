@@ -2,6 +2,8 @@
 
 An algorithmic data pipeline and interactive visualizer for detecting statistical and multi-dimensional machine learning anomalies across **Borsa İstanbul (BIST 30)** equities.
 
+![BIST Anomaly Dashboard](dashboard.png)
+
 ---
 
 ## 🎯 Motivation
